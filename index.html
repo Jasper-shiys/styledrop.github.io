@@ -1,598 +1,457 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="bootstrap.min.css" rel="stylesheet" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- anon-on -->
-    <meta name="twitter:site" content="@GoogleAI" />
-    <!-- anon-off -->
-    <meta name="twitter:title" content="StyleDrop: Text-to-Image Synthesis of Any Style" />
-    <meta name="twitter:description" content="StyleDrop: Text-to-Image Synthesis of Any Style" />
-    <meta name="twitter:image" content="https://styledrop.github.io/images/logo/muse_cake_1.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="jquery.min.js"></script>
-    <script src="jquery.flip.min.js"></script>
+  <link href="bootstrap.min.css" rel="stylesheet" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- anon-on -->
+  <meta name="twitter:site" content="@GoogleAI" />
+  <!-- anon-off -->
+  <meta name="twitter:title" content="StyleDrop: Text-to-Image Synthesis of Any Style" />
+  <meta name="twitter:description" content="StyleDrop: Text-to-Image Synthesis of Any Style" />
+  <meta name="twitter:image" content="https://styledrop.github.io/images/logo/muse_cake_1.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 
-    <title>StyleDrop: Text-to-Image Synthesis of Any Style</title>
-  </head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8HJZTYJKX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <script src="jquery.min.js"></script>
+  <script src="jquery.flip.min.js"></script>
 
-    gtag('config', 'G-V8HJZTYJKX');
-  </script>
-  <body>
+  <title>StyleDrop: Text-to-Image Synthesis of Any Style</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V8HJZTYJKX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    <div id="gallery0" style="padding-top: 50px; padding-bottom: 50px; background-color: rgb(245,245,245);">
-      <center>
+  gtag('config', 'G-V8HJZTYJKX');
+</script>
+
+<body>
+
+  <div id="gallery0" style="padding-top: 50px; padding-bottom: 50px; background-color: rgb(245,245,245);">
+    <center>
       <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/logo_jpgs/row03_col02_logo.jpg" style="height: 95%; max-height: 512px;">
+            <img src="./images/logo_jpgs/row03_col02_logo.jpg" style="width: 95%; max-width: 512px;">
             <figcaption style="font-size:18px">A logo with letters "StyleDrop" in 3d rendering style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
-            <img src="./images/logo_jpgs/row01_col01_logo.jpg"  style="height: 95%; max-height: 512px;">
+            <img src="./images/logo_jpgs/row01_col01_logo.jpg" style="width: 95%; max-width: 512px;">
             <figcaption style="font-size:18px">A transparent waterdrop in 3d rendering style.</figcaption>
           </figure>
         </div>
       </div>
-      </center>
-      <h2 style="text-align: center;"><i>StyleDrop:</i> Text-To-Image Synthesis of Any Style</h2>
+    </center>
+    <h2 style="text-align: center;"><i>StyleDrop:</i> Text-To-Image Synthesis of Any Style</h2>
     <!-- anon-on -->
     <div class="authors">
-      <p>Huiwen Chang<sup>*</sup>, Han Zhang<sup>*</sup>, Jarred Barber<sup>&dagger;</sup>, AJ Maschinot<sup>&dagger;</sup>, José Lezama, Lu Jiang,<br>  Ming-Hsuan Yang, Kevin Murphy,  William T. Freeman,  Michael Rubinstein<sup>&dagger;</sup>, Yuanzhen Li<sup>&dagger;</sup>, Dilip Krishnan<sup>&dagger;</sup> </p>
-      <p class="smaller"><sup>*</sup>Equal contribution. <sup>&dagger;</sup>Core contribution.</p>
-      <center><img src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg" alt="Google Research" height=25></center>
+      <!--<p>Kihyuk Sohn, Jarred Barber, Lu Jiang,<br> Michael Rubinstein, Yuanzhen Li, Dilip Krishnan </p>-->
+      <center><img
+          src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg"
+          alt="Google Research" height=25></center>
     </div>
     <!-- anon-off -->
   </div>
-    <div class="header_dark_gray">
-      <h1><i>StyleDrop</i> is a text-to-image generation model of any style.</h1>
-    </div>
+  <div class="header_dark_gray">
+    <h1><i>StyleDrop</i> is a text-to-image generation model of any style.</h1>
+  </div>
 
-    <div class="abstract">
-      <div class="inside">
-        <p class="text">
-          We present <i>StyleDrop</i>, a text-to-image synthesis model powered by <a href="https://muse-model.github.io/">Muse</a> with parameter-efficient fine-tuning.
-        </p>
-        <!-- anon-on -->
-        <a class="read-paper" href="https://styledrop.github.io/"><button>Research Paper</button></a>
-        <!-- anon-off -->
-      </div>
+  <div class="abstract">
+    <div class="inside">
+      <p class="text">
+        We present <i>StyleDrop</i> that enables the synthesis of images that faithfully follow a specific style,
+        powered by <a href="https://muse-model.github.io/">Muse</a>, a text-to-image generative vision transformer.
+        <i>StyleDrop</i> is extremely versatile and captures nuances and details of a user-provided style, such as color
+        schemes, shading, design patterns, and local and global effects. <i>StyleDrop</i> works by efficiently learning
+        a new style by fine-tuning very few trainable parameters (less than 1% of total model parameters), and improving
+        the quality via iterative training with either human or automated feedback. Better yet, <i>StyleDrop</i> is able
+        to deliver impressive results even when the user supplies only a <i>single</i> image specifying the desired
+        style. An extensive study shows that, for the task of style tuning text-to-image models, Styledrop on <a
+          href="https://muse-model.github.io/">Muse</a> convincingly outperforms other methods, including <a
+          href="https://dreambooth.github.io/">DreamBooth</a> and <a href="https://textual-inversion.github.io/">Textual
+          Inversion</a> on <a href="https://imagen.research.google/">Imagen</a> or <a
+          href="https://stability.ai/stable-diffusion">Stable Diffusion</a>.
+      </p>
+      <!-- anon-on -->
+      <a class="read-paper" href="https://styledrop.github.io/"><button>Research Paper</button></a>
+      <!-- anon-off -->
     </div>
-    <!-- Block 1: System description -->
-    <div class="header_dark_gray">
-      <h1>Stylized Text-to-image Generation</h1>
-      <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates high-quality images from text prompts of any style described by a <i>single</i> reference image.</p>
-    </div>
-    <div class="image_8" id="gallery1">
+  </div>
+
+  <!-- Block 1: System description -->
+  <div class="header_dark_gray">
+    <h1>Stylized Text-to-image Generation from a Single Image</h1>
+    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates high-quality images from text prompts of
+      any style described by a <i>single</i> reference image.</p>
+  </div>
+
+  <div class="image_0" id="gallery1"
+    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
+    <center>
       <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>An abstract, flowery painting</figcaption>
+            <img src="./images/styledrop_single/04_01.jpg" style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
-            <img>
-            <figcaption>.</figcaption>
+            <img style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="flipcard nomobile" id="fig1">
+    </center>
+  </div>
+  <div class="image_0" id="gallery2"
+    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
+    <center>
+      <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/gallery/A shallow focus photography of a lamb in a wine glass._1_sr.jpg">
-            <figcaption>A shallow focus photography of a lamb in a wine glass.</figcaption>
+            <img src="./images/styledrop_single/17_01.jpg" style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
-            <img />
-            <figcaption />
+            <img style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="flipcard nomobile" id="fig2">
+    </center>
+  </div>
+
+  <!-- Block 2: Character rendering -->
+  <div class="header_dark_gray">
+    <h1>Stylized Character Rendering</h1>
+    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style described by a <i>single</i> reference image.</p>
+  </div>
+
+  <div class="image_0" id="gallery1"
+    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
+    <center>
+      <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/gallery/A cake made of macarons in a heart shape_1_sr.jpg">
-            <figcaption>A cake made of macarons in a heart shape.</figcaption>
+            <img src="./images/styledrop_single/08_01.jpg" style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
-            <img src="./images/gallery/A cake made of macarons in a heart shape_1_sr.jpg">
-            <figcaption>A cake made of macarons in a heart shape.</figcaption>
+            <img style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="flipcard nomobile" id="fig3">
+    </center>
+  </div>
+
+  <!-- Block 3: Design and Illustration -->
+  <div class="header_dark_gray">
+    <h1>Build Your Style Assistant</h1>
+    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> is easy to train with your own brand assets and helps you to quickly prototype different ideas with your own style.</p>
+  </div>
+
+  <div class="image_0" id="gallery1"
+    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
+    <center>
+      <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/gallery/A tilt shift macro shot of a tiny Christmas town_sr.jpg">
-            <figcaption>A tilt shift macro shot of a tiny Christmas town</figcaption>
+            <img src="./images/styledrop_single/08_01.jpg" style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
-            <img src="./images/gallery/A cake made of macarons in a heart shape_1_sr.jpg">
-            <figcaption>A cake made of macarons in a heart shape.</figcaption>
+            <img style="width: 95%; max-width: 1536px;">
+            <br></br>
+            <figcaption style="font-size:18px">.</figcaption>
           </figure>
         </div>
       </div>
-      <div class="flipcard nomobile" id="fig4">
-        <div class="front">
-          <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>An abstract, flowery painting</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="flipcard nomobile" id="fig5">
-        <div class="front">
-          <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>A shallow focus photography of a lamb in a wine glass.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img />
-            <figcaption />
-          </figure>
-        </div>
-      </div>
-      <div class="flipcard nomobile" id="fig6">
-        <div class="front">
-          <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img>
-            <figcaption>.</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="flipcard nomobile" id="fig7">
-        <div class="front">
-          <figure>
-            <img src="./images/gallery/An abstract, flowery painting_.jpg">
-            <figcaption>A tilt shift macro shot of a tiny Christmas town</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img>
-            <figcaption>A cake made of macarons in a heart shape.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-    
-    <div class="header_dark_gray">
-      <h1>Zero-shot, Mask-free editing</h1>
-      <p align=center>Our model gives us zero-shot, mask-free editing for free by iteratively resampling image tokens conditioned on a text prompt.
-    </div>
+    </center>
+  </div>
 
-    <div class="compositional">
-      <br>
-      <div class="text" id="compositional_madeof">
-        <!-- <h3>Choose a prompt:</h3> -->
-        <p class="selectable left"><span class="selected">Original</span>
-        <!-- <br><span>"A cat wearing a hat."</span> -->
-        <br><span>"A cat wearing a tie."</span>
-        <br><span>"A dog."</span>
-        <br><span>"A pig."</span>
-        <br><span>"A shiba inu."</span>
-        <br><span>"A rabbit."</span>
-        <br><span>"A raccoon."</span>
-        <br><span>"A tiger."</span>
-        <br><span>"An owl."</span>
-        </p>
-      </div>
-      <br>
-      <div class="image">
-        <img src="./images/edit_opt/orig.gif" id="compositional_madeof_img">
-      </div>
-    </div>
-    <div class="header_light_gray">
-      <h2>Mask-free editing controls multiple objects in an image using only a text prompt.
-      </h2>
-    </div>
-    <div class="edit_grid">
-      <div class="caption">A croissant next to a latte with a flower latte art.</div>
-      <div>
-        <figure>
-          <figcaption>Original</figcaption>
-          <img src="images/mfe/18_seed_0_orig_sr.jpg" >
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <figcaption>Edited</figcaption>
-          <img src="images/mfe/18_seed_0_synth_sr.jpg" >
-        </figure>
-      </div>
-    </div>
-    <div class="edit_grid">
-      <div class="caption">A bottle of Pinot Grigio next to a glass of white wine and a cork.</div>
-      <div>
-        <figure>
-          <figcaption>Original</figcaption>
-          <img src="images/mfe/68_seed_1_orig_sr.jpg" >
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <figcaption>Edited</figcaption>
-          <img src="images/mfe/68_seed_1_synth_sr.jpg" >
-        </figure>
-      </div>
-    </div>
-
-    <div class="header_dark_gray">
-      <h1>Zero-shot Inpainting/Outpainting</h1>
-      <p align=center>Our model gives us mask-based editing (inpainting/outpainting) for free: mask-based editing is equivalent to generation.</p>
-    </div>
-
-    <div class="compositional">
-      <br>
-      <div class="text" id="compositional_animals">
-        <p class="selectable left"><span class="selected">Original (with mask)</span>
-        <br><span>"New York in the background"</span><br>
-        <span>"Paris in the background"</span><br>
-        <span>"San Francisco in the background"</span>
-        </p>
-      </div>
-      <br>
-      <div class="image">
-        <img src="./images/inpaint/boston_masked.jpg" id="compositional_animals_img">
-      </div>
-    </div>
-    <div class="edit_grid">
-      <div class="caption">Hot air balloons.</div>
-      <div>
-        <figure>
-          <figcaption>Original (+mask)</figcaption>
-          <img src="images/inpaint/greta_orig.jpg">
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <figcaption>Edited</figcaption>
-          <img src="images/inpaint/greta_balloons.jpg">
-        </figure>
-      </div>
-    </div>
-    <div class="edit_grid">
-      <div class="caption">Beautiful fall foliage; the gazebo is on a lake</div>
-      <div>
-        <figure>
-          <figcaption>Original (+mask)</figcaption>
-          <img src="images/inpaint/gazebo_masked.jpg">
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <figcaption>Edited</figcaption>
-          <img src="images/inpaint/gazebo_synth.jpg">
-        </figure>
-      </div>
-    </div>
-    <div class="header_dark_gray">
-      <h1>Interactive editing</h1>
-    </div>
-    <div class="white">
-      <figure>
-        <figcaption><p>Muse's speed and tokenization approach enables real-time interactive editing of images. For these examples, each update is processed in 760ms via a single pass through the base model and 8 passes through the superres model.</p></figcaption>
-      </figure>
-    </div>
-    <div class="content1">
-      <div>
-        <figure>
-          <iframe width="512" height="512" src="https://www.youtube.com/embed/WWrPo9blNvs" title="Muse interactive editing - Wine" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <iframe width="512" height="512" src="https://www.youtube.com/embed/2ITNOvp5oJU" title="Muse editing demo - Shoes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </figure>
-      </div>
-    </div>
-    <div class="content1">
-      <div>
-        <figure>
-          <iframe width="512" height="512" src="https://www.youtube.com/embed/COLa2huGD4Q" title="Muse interactive editing - Harvard Square" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </figure>
-      </div>
-      <div>
-        <figure>
-          <iframe width="512" height="512" src="https://www.youtube.com/embed/Rom8v0WgMBc" title="Muse interactive editing - Can" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </figure>
-      </div>
-    </div>
-    <div class="header_dark_gray">
-      <h1>Model details</h1>
-    </div>
-    <div class="white">
-      <figure>
-        <img src="./images/pipeline_v4.jpg">
-        <figcaption><p><i>Muse</i> training pipeline. We feed low resolution and high resolution images into two independent VQGAN tokenizer networks. These tokens are then masked, and low resolution ("base") and high resolution ("superres") transformers are trained to predict masked tokens, conditioned on unmasked tokens and T5 text embeddings.</p></figcaption>
-      </figure>
-    </div>
-
-    <div class="content1">
-      <div>
-        <h1>Contributions</h1>
-        <ul class="highlights">
-          <li>We present a state-of-the-art model for text-to-image generation which achieves excellent FID and CLIP scores, which quantitatively measure image generation quality, diversity and alignment with text prompts.</li>
-          <li>Our model is significantly faster than other comparable models due to the use of a compressed, discrete latent space and parallel decoding.</li>
-          <li>Our architecture enables out-of-the-box zero-shot capabilities such as inpainting, outpainting, and mask-free image editing.</li>
-        </ul>
-      </div>
-      <div class="right" style="display: flex;">
-        <table class="pretty" style="align-self: center;">
-          <caption><i>Muse</i> improves inference time over other models.<br>
-            <font size=0.5em>
-            <sup>*</sup>Stable Diffusion times represent the best reported inference times and were not measured internally. The configuration used to achieve FID of 12.63 uses 5x more diffusion steps than what was used for benchmarking, roughly equivalent to 18.5s sampling time. 
-            </font>
-          </caption>
-          <tr style="border-bottom: 3px solid rgb(26, 26, 26);">
-            <th class="fid">Model</th>
-            <th class="fid">&nbsp;Resolution</th>
-            <th class="fid">&nbsp;Inference<br>Time (&darr;)</th>
-          </tr>
-          <!-- <tr style="border-top: 1px solid rgb(26, 26, 26);"> -->
-          <!--   <td>Zero-shot COCO</td> -->
-          <!-- </tr> -->
-          <tr>
-            <td class="model">Stable Diffusion 1.4<sup>*</sup></td>
-            <td class="fid">512x512</td>
-            <td class="fid">3.7s</td>
-          </tr>
-          <tr>
-            <td class="model">Parti-3B</td>
-            <td class="fid">256x256</td>
-            <td class="fid">6.4s</td>
-          </tr>
-          <tr>
-            <td class="model">Imagen</td>
-            <td class="fid">256x256</td>
-            <td class="fid">9.1s</td>
-          </tr>
-          <tr style="border-bottom: 1px solid ">
-            <td class="model">Imagen</td>
-            <td class="fid">1024x1024</td>
-            <td class="fid">13.3s</td>
-          </tr>
-          <tr>
-            <td class="model" style="font-weight: bold; color: rgb(26, 26, 26);">Muse-3B</td>
-            <td class="fid">256x256</td>
-            <td class="fid" style="font-weight: bold; color: rgb(26, 26, 26);">0.5s</td>
-          </tr>
-          </tr>
-            <td class="model" style="font-weight: bold; color: rgb(26, 26, 26);">Muse-3B</td>
-            <td class="fid">512x512</td>
-            <td class="fid" style="font-weight: bold; color: rgb(26, 26, 26);">1.3s</td>
-          </tr>
-        </table>
-      </div>
-
- 
-    </div>  
-    <div class="content1">
-      <div class="right" style="display: flex;">
-        <table class="pretty" style="align-self: center;">
-          <caption>FID (quality/diversity) and CLIP (text-image alignment) scores measured on zero-shot COCO.</caption>
-          <tr style="border-bottom: 3px solid rgb(26, 26, 26);">
-            <th class="fid">Model</th>
-            <th class="fid">FID (&darr;)</th>
-            <th class="fid">&nbsp;CLIP (&uarr;)</th>
-          </tr>
-          <tr>
-            <td class="model">Stable Diffusion 1.4</td>
-            <td class="fid">12.63</td>
-            <td class="fid">-</td>
-          </tr>
-          <tr>
-            <td class="model">Parti-3B</td>
-            <td class="fid">8.10</td>
-            <td class="fid">-</td>
-          </tr>
-          <tr style="border-bottom: 1px solid ">
-            <td class="model">Imagen</td>
-            <td class="fid" style="font-weight: bold; color: rgb(26, 26, 26);">7.27</td>
-            <td class="fid">0.27</td>
-          </tr>
-          <tr style="border-bottom: 3px solid rgb(26, 26, 26);">
-            <td class="model" style="font-weight: bold; color: rgb(26, 26, 26);">Muse-3B</td>
-            <td class="fid">7.88</td>
-            <td class="fid" style="font-weight: bold; color: rgb(26, 26, 26);">0.32</td>
-          </tr>
-        </table>
-      </div>
-    </div>
+  <!-- anon-on -->
+  <div class="content">
+    <h1>Special Thanks</h1>
+    <p class="smaller" style="text-align: justify;">.</p>
+  </div>
+  <!-- anon-off -->
 
 
-    <!-- anon-on -->
-    <div class="content">
-      <h1>Special Thanks</h1>
-      <p class="smaller" style="text-align: justify;">We thank William Chan, Chitwan Saharia, and Mohammad Norouzi for providing us training datasets, various evaluation codes, website templates and generous suggestions. Jay Yagnik, Rahul Sukthankar, Tom Duerig and David Salesin provided enthusiastic support of this project for which we are grateful. We thank Victor Gomes and Erica Moreira for infrastructure support, Jing Yu Koh and Jason Baldridge for dataset, model and evaluation discussions and feedback on the paper, Mike Krainin for model speedup discussions, JD Velasquez for discussions and insights, Sarah Laszlo, Kathy Meier-Hellstern, and Rachel Stigler for assisting us with the publication process, Andrew Bunner, Jordi Pont-Tuset, and Shai Noy for help on internal demos, David Fleet, Saurabh Saxena, Jiahui Yu, and Jason Baldridge for sharing Imagen and Parti speed metrics.</p>
-    </div>
-    <!-- anon-off -->
+  <script type="text/javascript">
+    logo_images = [
+      {
+        "src": "./images/logo_jpgs/row01_col01_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col02_logo.jpg",
+        "caption": "A transparent waterdrop in watercolor painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col03_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col04_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col05_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in oil painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col06_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in line drawing style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col07_logo.jpg",
+        "caption": "A transparent waterdrop in oil painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row01_col08_logo.jpg",
+        "caption": "A transparent waterdrop in oil painting style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col01_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in cartoon line drawing."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col02_logo.jpg",
+        "caption": "A transparent waterdrop in flat cartoon illustration style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col03_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in flat cartoon illustration style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col04_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in sticker style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col05_logo.jpg",
+        "caption": "A transparent waterdrop in abstract rainbow colored flowing smoke wave design."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col06_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in glowing style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col07_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in well-lit haunted style."
+      },
+      {
+        "src": "./images/logo_jpgs/row02_col08_logo.jpg",
+        "caption": "A transparent waterdrop in beautifull-lit mythical photo style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col01_logo.jpg",
+        "caption": "A transparent waterdrop in 3d rendering style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col02_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in 3d rendering style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col03_logo.jpg",
+        "caption": "A transparent waterdrop in glowing 3d rendering style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col04_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in 3d rendering style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col05_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in kid crayon drawing style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col06_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in glowing metal sculpture."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col07_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in melting golden 3d rendering style."
+      },
+      {
+        "src": "./images/logo_jpgs/row03_col08_logo.jpg",
+        "caption": "A logo with letters \"StyleDrop\" in wooden sculpture."
+      },
+    ];
 
+    gallery_images_1 = [
+      {"src": "./images/styledrop_single/01_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/02_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/03_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/04_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/05_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/06_01.jpg", "caption": "\"Line drawing style\""},
+      {"src": "./images/styledrop_single/07_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/08_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/15_01.jpg", "caption": "\"Well lit haunted style\""},
+      {"src": "./images/styledrop_single/16_01.jpg", "caption": "\"Beautifully lit mythical photo style\""},
+      {"src": "./images/styledrop_single/01_02.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/02_02.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/03_02.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/04_02.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_single/05_02.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/06_02.jpg", "caption": "\"Line drawing style\""},
+      {"src": "./images/styledrop_single/07_02.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/08_02.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_single/15_02.jpg", "caption": "\"Well lit haunted style\""},
+      {"src": "./images/styledrop_single/16_02.jpg", "caption": "\"Beautifully lit mythical photo style\""},
+    ];
+    gallery_images_2 = [
+      {"src": "./images/styledrop_single/09_01.jpg", "caption": "\"Cartoon line drawing style\""},
+      {"src": "./images/styledrop_single/10_01.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_single/11_01.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_single/12_01.jpg", "caption": "\"Sticker style\""},
+      {"src": "./images/styledrop_single/13_01.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
+      {"src": "./images/styledrop_single/14_01.jpg", "caption": "\"Glowing style\""},
+      {"src": "./images/styledrop_single/17_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/18_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/19_01.jpg", "caption": "\"Glowing 3d rendering style\""},
+      {"src": "./images/styledrop_single/20_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/21_01.jpg", "caption": "\"Kid crayon drawing style\""},
+      {"src": "./images/styledrop_single/22_01.jpg", "caption": "\"Glowing metal sculpture\""},
+      {"src": "./images/styledrop_single/23_01.jpg", "caption": "\"Melting golden 3d rendering style\""},
+      {"src": "./images/styledrop_single/24_01.jpg", "caption": "\"Wooden sculpture\""},
+      {"src": "./images/styledrop_single/09_02.jpg", "caption": "\"Cartoon line drawing style\""},
+      {"src": "./images/styledrop_single/10_02.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_single/11_02.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_single/12_02.jpg", "caption": "\"Sticker style\""},
+      {"src": "./images/styledrop_single/13_02.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
+      {"src": "./images/styledrop_single/14_02.jpg", "caption": "\"Glowing style\""},
+      {"src": "./images/styledrop_single/17_02.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/18_02.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/19_02.jpg", "caption": "\"Glowing 3d rendering style\""},
+      {"src": "./images/styledrop_single/20_02.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_single/21_02.jpg", "caption": "\"Kid crayon drawing style\""},
+      {"src": "./images/styledrop_single/22_02.jpg", "caption": "\"Glowing metal sculpture\""},
+      {"src": "./images/styledrop_single/23_02.jpg", "caption": "\"Melting golden 3d rendering style\""},
+      {"src": "./images/styledrop_single/24_02.jpg", "caption": "\"Wooden sculpture\""},
+    ];
 
-    <script type="text/javascript">
-      logo_images = [
-        {"src": "./images/logo_jpgs/row01_col01_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."},
-        {"src": "./images/logo_jpgs/row01_col02_logo.jpg",
-          "caption": "A transparent waterdrop in watercolor painting style."},
-        {"src": "./images/logo_jpgs/row01_col03_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."},
-        {"src": "./images/logo_jpgs/row01_col04_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in watercolor painting style."},
-        {"src": "./images/logo_jpgs/row01_col05_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in oil painting style."},
-        {"src": "./images/logo_jpgs/row01_col06_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in line drawing style."},
-        {"src": "./images/logo_jpgs/row01_col07_logo.jpg",
-          "caption": "A transparent waterdrop in oil painting style."},
-        {"src": "./images/logo_jpgs/row01_col08_logo.jpg",
-          "caption": "A transparent waterdrop in oil painting style."},
-        {"src": "./images/logo_jpgs/row02_col01_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in cartoon line drawing."},
-        {"src": "./images/logo_jpgs/row02_col02_logo.jpg",
-          "caption": "A transparent waterdrop in flat cartoon illustration style."},
-        {"src": "./images/logo_jpgs/row02_col03_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in flat cartoon illustration style."},
-        {"src": "./images/logo_jpgs/row02_col04_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in sticker style."},
-        {"src": "./images/logo_jpgs/row02_col05_logo.jpg",
-          "caption": "A large waterdrop in abstract rainbow colored flowing smoke wave design."},
-        {"src": "./images/logo_jpgs/row02_col06_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in glowing style."},
-        {"src": "./images/logo_jpgs/row02_col07_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in well-lit haunted style."},
-        {"src": "./images/logo_jpgs/row02_col08_logo.jpg",
-          "caption": "A transparent waterdrop in beautifull-lit mythical photo style."},
-        {"src": "./images/logo_jpgs/row03_col01_logo.jpg",
-          "caption": "A transparent waterdrop in 3d rendering style."},
-        {"src": "./images/logo_jpgs/row03_col02_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in 3d rendering style."},
-        {"src": "./images/logo_jpgs/row03_col03_logo.jpg",
-          "caption": "A transparent waterdrop in glowing 3d rendering style."},
-        {"src": "./images/logo_jpgs/row03_col04_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in 3d rendering style."},
-        {"src": "./images/logo_jpgs/row03_col05_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in kid crayon drawing style."},
-        {"src": "./images/logo_jpgs/row03_col06_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in glowing metal sculpture."},
-        {"src": "./images/logo_jpgs/row03_col07_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in melting golden 3d rendering style."},
-        {"src": "./images/logo_jpgs/row03_col08_logo.jpg",
-          "caption": "A logo with letters \"StyleDrop\" in wooden sculpture."},
-      ];
+    lastCardFlippedIdx = {
+      gallery0: -1,
+      gallery1: -1,
+      gallery2: -1,
+    };
 
-      gallery_images = [{"src": "./images/gallery/A real flamingo reading a large open book. a big stack of books is piled up next to it. dslr photograph._1_sr.jpg", "caption": "A real flamingo reading a large open book. a big stack of books is piled up next to it. dslr photograph."}, {"src": "./images/gallery/A rabbit playing the violin.jpg", "caption": "A rabbit playing the violin"}, {"src": "./images/gallery/Three  elephants  standing  ontop of each other._sr.jpg", "caption": "Three  elephants  standing  ontop of each other."}, {"src": "./images/gallery/A striking photo of a lighthouse at sunset..jpg", "caption": "A striking photo of a lighthouse at sunset."}, {"src": "./images/gallery/A cat and a dog. Canon camera. 10mm lens_5_sr.jpg", "caption": "A cat and a dog. Canon camera. 10mm lens"}, {"src": "./images/gallery/High-contrast  image  of  the word  \u201cWOMBAT\u201d   writtenwith thick colored graffiti letters on a white wall with dramatic splashes of paint_sr.jpg", "caption": "High-contrast  image  of  the word  \u201cWOMBAT\u201d   writtenwith thick colored graffiti letters on a white wall with dramatic splashes of paint"}, {"src": "./images/gallery/A bear riding a bicycle, with a bird perched on the handlebars._1_sr.jpg", "caption": "A bear riding a bicycle, with a bird perched on the handlebars."}, {"src": "./images/gallery/A surrealist painting of a robot making coffee..jpg", "caption": "A surrealist painting of a robot making coffee."}, {"src": "./images/gallery/A cake made of macarons in a heart shape_1_sr.jpg", "caption": "A cake made of macarons in a heart shape"}, {"src": "./images/gallery/An abstract, flowery painting_.jpg", "caption": "An abstract, flowery painting"}, {"src": "./images/gallery/A painting of a canal in Venice.jpg", "caption": "A painting of a canal in Venice"}, {"src": "./images/gallery/The New York skyline, with the great pyramid in the foreground and Mount Everest in the background._sr.jpg", "caption": "The New York skyline, with the great pyramid in the foreground and Mount Everest in the background."}, {"src": "./images/gallery/A shallow focus photography of a lamb in a wine glass._1_sr.jpg", "caption": "A shallow focus photography of a lamb in a wine glass."}, {"src": "./images/gallery/An art gallery displaying Monet paintings. The art gallery is flooded. Robots are going around the art gallery using paddle boards.jpg", "caption": "An art gallery displaying Monet paintings. The art gallery is flooded. Robots are going around the art gallery using paddle boards"}, {"src": "./images/gallery/A close up, sharp photo of a pink flower..jpg", "caption": "A close up, sharp photo of a pink flower."}, {"src": "./images/gallery/A photo of a panda doing yoga on a yoga mat..jpg", "caption": "A photo of a panda doing yoga on a yoga mat."}, {"src": "./images/gallery/A cat playing a game of chess against itself. Hyper sharp. Award winning. Canon camera. 10mm lens_9_sr.jpg", "caption": "A cat playing a game of chess against itself. Hyper sharp. Award winning. Canon camera. 10mm lens"}, {"src": "./images/gallery/A cake made of macarons in a unicorn shape_1_sr.jpg", "caption": "A cake made of macarons in a unicorn shape"}, {"src": "./images/gallery/Portrait of a well-dressed raccoon, oil painting in the styleof Rembrandt_sr.jpg", "caption": "Portrait of a well-dressed raccoon, oil painting in the styleof Rembrandt"}, {"src": "./images/gallery/Two cats doing research_7_sr.jpg", "caption": "Two cats doing research"}, {"src": "./images/gallery/A large present with a red rib-bon to the left of a Christmastree._sr.jpg", "caption": "A large present with a red rib-bon to the left of a Christmastree."}, {"src": "./images/gallery/An artistic black and white street photograph of a French cafe.jpg", "caption": "An artistic black and white street photograph of a French cafe"}, {"src": "./images/gallery/Manhattan skyline made out of bread..jpg", "caption": "Manhattan skyline made out of bread."}, {"src": "./images/gallery/A tilt shift macro shot of a tiny Christmas town_sr.jpg", "caption": "A tilt shift macro shot of a tiny Christmas town"}, {"src": "./images/gallery/A  photograph  of  the  inside of  a  subway  train. There are  raccoons  sitting  on  the seats.   One  of  them  is  reading a newspaper. The window shows  the  city  in  the  background._sr.jpg", "caption": "A  photograph  of  the  inside of  a  subway  train. There are  raccoons  sitting  on  the seats.   One  of  them  is  reading a newspaper. The window shows  the  city  in  the  background."}, {"src": "./images/gallery/Two cups of coffee, one with latte  art  of  yin  yang  symbol. The  other  has  latter art of a heart._.jpg", "caption": "Two cups of coffee, one with latte  art  of  yin  yang  symbol. The  other  has  latter art of a heart."}, {"src": "./images/gallery/Rainbow coloured penguin_2_sr.jpg", "caption": "Rainbow coloured penguin"}, {"src": "./images/gallery/A cake made of macarons in a pineapple shape_1_sr.jpg", "caption": "A cake made of macarons in a pineapple shape"}, {"src": "./images/gallery/A high contrast portrait photo of a fluffy hamster wearing an orange beanie and sunglasses holding a sign that says _Let's PAINT!__2_sr.jpg", "caption": "A high contrast portrait photo of a fluffy hamster wearing an orange beanie and sunglasses holding a sign that says "}, {"src": "./images/gallery/A futuristic city with flying cars._1_sr.jpg", "caption": "A futuristic city with flying cars."}, {"src": "./images/gallery/Two  baseballs  to  the  left  of three tennis balls._sr.jpg", "caption": "Two  baseballs  to  the  left  of three tennis balls."}, {"src": "./images/gallery/A ballet dancer made from rope..jpg", "caption": "A ballet dancer made from rope."}, {"src": "./images/gallery/A fluffy baby sloth with a knitted hat trying to figure out a laptop, cluse up..jpg", "caption": "A fluffy baby sloth with a knitted hat trying to figure out a laptop, cluse up."}, {"src": "./images/gallery/The saying 'BE EXCELLENT TO EACH OTHER' written in a stained glass window._sr.jpg", "caption": "The saying 'BE EXCELLENT TO EACH OTHER' written in a stained glass window."}, {"src": "./images/gallery/A  portrait  of  a  man  wearing sunglasses and a business suit, painting in pop art style._sr.jpg", "caption": "A  portrait  of  a  man  wearing sunglasses and a business suit, painting in pop art style."}];
+    lastCardFlippedLastSwapTime = {
+      gallery0: -1,
+      gallery1: -1,
+      gallery2: -1,
+    };
 
-      lastCardFlippedIdx = {
-        gallery0: -1,
-        gallery1: -1,
-      };
+    $(".flipcard").flip({
+      trigger: "manual",
+      reverse: false,
+    });
 
-      lastCardFlippedLastSwapTime = {
-        gallery0: -1,
-        gallery1: -1,
-      };
+    function checkIfImageIsVisible(name, image) {
+      numCards = $(name + " .flipcard:visible").size();
 
-      $(".flipcard").flip({
-        trigger: "manual",
-        reverse: false,
-      });
-
-      function checkIfImageIsVisible(name, image) {
-        numCards = $(name + " .flipcard:visible").size();
-
-        for (var cardIdx = 0; cardIdx < numCards; ++cardIdx) {
-          var isFlipped = $(name + " #fig" + cardIdx).data("flip-model").isFlipped;
-          if (!isFlipped) {
-            src = $(name + " #fig" + cardIdx + " div.front figure img").attr("src")
-          } else {
-            src = $(name + " #fig" + cardIdx + " div.back figure img").attr("src")
-          }
-
-          if (image.src == src) {
-            return true;
-          }
-        }
-        return false;
-      }
-
-      function getNextImage(name) {
-        // different galleries have different sources of imagery.
-        if (name == "#gallery0") {
-            img_src = logo_images;
-        } else {
-            img_src = gallery_images;
-        }
-        while (true) {
-          randomImageIdx = Math.floor(Math.random() * img_src.length);
-          if (!checkIfImageIsVisible(name, img_src[randomImageIdx])) {
-            return img_src[randomImageIdx];
-          }
-        }
-      }
-
-      function randomSwapImageWithId(name, randomCardIdx) {
-        numCards = $(name + " .flipcard:visible").size();
-
-        image = getNextImage(name);
-
-        const d = new Date();
-        let currentTime = d.getTime();
-        lastCardFlippedIdx[name] = randomCardIdx;
-        lastCardFlippedLastSwapTime[name] = currentTime;
-
-        var isFlipped = $(name + " #fig" + randomCardIdx).data("flip-model").isFlipped;
+      for (var cardIdx = 0; cardIdx < numCards; ++cardIdx) {
+        var isFlipped = $(name + " #fig" + cardIdx).data("flip-model").isFlipped;
         if (!isFlipped) {
-          $(name + " #fig" + randomCardIdx + " div.back figure img").attr("src", image.src)
-          $(name + " #fig" + randomCardIdx + " div.back figure figcaption").text(image.caption)
+          src = $(name + " #fig" + cardIdx + " div.front figure img").attr("src")
         } else {
-          $(name + " #fig" + randomCardIdx + " div.front figure img").attr("src", image.src)
-          $(name + " #fig" + randomCardIdx + " div.front figure figcaption").text(image.caption)
+          src = $(name + " #fig" + cardIdx + " div.back figure img").attr("src")
         }
 
-        $(name + " #fig" + randomCardIdx).flip("toggle");
-      }
-
-      function randomSwapImage(name) {
-        numCards = $(name + " .flipcard:visible").size();
-
-        const d = new Date();
-        if (d.getTime() - lastCardFlippedIdx[name] < 5000) {
-          setTimeout(randomSwapImage, 1000, name);
-          return;
+        if (image.src == src) {
+          return true;
         }
-
-        do {
-          randomCardIdx = Math.floor(Math.random() * numCards);
-          if (numCards == 1) {
-            break;
-          }
-        } while (randomCardIdx == lastCardFlippedIdx[name]);
-
-        randomSwapImageWithId(name, randomCardIdx);
-        setTimeout(randomSwapImage, 3000, name);
       }
-      setTimeout(randomSwapImage, 6000, "#gallery0");
+      return false;
+    }
 
-      function setupGallery1(id) {
+    function getNextImage(name) {
+      // different galleries have different sources of imagery.
+      if (name == "#gallery0") {
+        img_src = logo_images;
+      } else if (name == "#gallery1") {
+        img_src = gallery_images_1;
+      } else if (name == "#gallery2") {
+        img_src = gallery_images_2;
+      }
+      while (true) {
+        randomImageIdx = Math.floor(Math.random() * img_src.length);
+        if (!checkIfImageIsVisible(name, img_src[randomImageIdx])) {
+          return img_src[randomImageIdx];
+        }
+      }
+    }
+
+    function randomSwapImageWithId(name, randomCardIdx) {
+      numCards = $(name + " .flipcard:visible").size();
+
+      image = getNextImage(name);
+
+      const d = new Date();
+      let currentTime = d.getTime();
+      lastCardFlippedIdx[name] = randomCardIdx;
+      lastCardFlippedLastSwapTime[name] = currentTime;
+
+      var isFlipped = $(name + " #fig" + randomCardIdx).data("flip-model").isFlipped;
+      if (!isFlipped) {
+        $(name + " #fig" + randomCardIdx + " div.back figure img").attr("src", image.src)
+        $(name + " #fig" + randomCardIdx + " div.back figure figcaption").text(image.caption)
+      } else {
+        $(name + " #fig" + randomCardIdx + " div.front figure img").attr("src", image.src)
+        $(name + " #fig" + randomCardIdx + " div.front figure figcaption").text(image.caption)
+      }
+
+      $(name + " #fig" + randomCardIdx).flip("toggle");
+    }
+
+    function randomSwapImage(name) {
+      numCards = $(name + " .flipcard:visible").size();
+
+      const d = new Date();
+      if (d.getTime() - lastCardFlippedIdx[name] < 5000) {
+        setTimeout(randomSwapImage, 1000, name);
+        return;
+      }
+
+      do {
+        randomCardIdx = Math.floor(Math.random() * numCards);
+        if (numCards == 1) {
+          break;
+        }
+      } while (randomCardIdx == lastCardFlippedIdx[name]);
+
+      randomSwapImageWithId(name, randomCardIdx);
+      setTimeout(randomSwapImage, 3000, name);
+    }
+    setTimeout(randomSwapImage, 6000, "#gallery0");
+
+    function setupGallery1(id) {
             randomSwapImageWithId("#gallery1", id);
             $("#gallery1 #fig" + id).click(
               function() {
@@ -600,120 +459,32 @@
               }
             );
       }
-      for (id = 0; id < 8; id ++) {
+      for (id = 0; id < 1; id ++) {
             setupGallery1(id);
       }
-      $("#gallery0 #fig0").click(
-        function() {
-          randomSwapImageWithId("#gallery0", 0);
-        }
-      );
-
-      setTimeout(randomSwapImage, 1000, "#gallery1");
-    </script>
-
-   
-    <script type="text/javascript">
-      compositionalAnimalsManualClicked = false;
-      compositionalMadeOfManualClicked = false;
-
-      comp_files = {
-        "Original (with mask)": "./images/inpaint/boston_masked.jpg",
-        "\"New York in the background\"": "./images/inpaint/boston_nyc.jpg",
-        "\"Paris in the background\"": "./images/inpaint/boston_paris.jpg",
-        "\"San Francisco in the background\"": "./images/inpaint/boston_sf.jpg"
+      function setupGallery2(id) {
+            randomSwapImageWithId("#gallery2", id);
+            $("#gallery2 #fig" + id).click(
+              function() {
+                randomSwapImageWithId("#gallery2", id);
+              }
+            );
+      }
+      for (id = 0; id < 1; id ++) {
+            setupGallery2(id);
       }
 
-      function updateComposition(name) {
-        var compositionSpans = $(name + " p span.selected").map(function() {
-          return $(this).text();
-        }).get();
-        var compositionText = "";
-        for (var compositionSpansIdx = 0; compositionSpansIdx < compositionSpans.length; ++compositionSpansIdx) {
-          if (compositionSpansIdx > 0) {
-            compositionText += " ";
-          }
-          compositionText += compositionSpans[compositionSpansIdx];
-        }
-        if (name == "#compositional_madeof") {
-          if (compositionText == "Original") {
-            $(name + "_img").attr("src", "./images/edit_opt/orig.gif")
-          } else {
-            // Generate a random index that is not the one already selected
-            randImgIdx = "/"; // something guaranteed to be in the path
-            cur_src = $(name + "_img").attr("src");
-            while (cur_src.search(randImgIdx) != -1) {
-              randImgIdx = Math.floor(Math.random() * 4);
-            }
-            first_space = compositionText.search(" ");
-            file = compositionText.slice(first_space + 1, -2).replaceAll(" ", "-");
-            $(name + "_img").attr("src", "./images/edit_opt/" + file + "_" + randImgIdx + ".gif")
-          }
-        } else if (name == "#compositional_animals") {
-          randImgIdx = Math.floor(Math.random() * 4);
-          $(name + "_img").attr("src", comp_files[compositionText]);
-        }
+    $("#gallery0 #fig0").click(
+      function () {
+        randomSwapImageWithId("#gallery0", 0);
       }
+    );
 
-      function randomComposition(name) {
-        if (name == "#compositional_animals" && compositionalAnimalsManualClicked == true) {
-          compositionalAnimalsManualClicked = false;
-          setTimeout(randomComposition, 4000, name);
-          return;
-        } else if (name == "#compositional_madeof" &&
-                   compositionalMadeOfManualClicked == true) {
-          compositionalMadeOfManualClicked = false;
-          setTimeout(randomComposition, 4000, name);
-          return;
-        }
+    setTimeout(randomSwapImage, 2000, "#gallery1");
+    setTimeout(randomSwapImage, 2000, "#gallery2");
+  </script>
 
-        var compositionPs = $(name + " p.selectable").toArray();
-        var compositionOptions = [];
-        for (var i = 0; i < compositionPs.length; ++i) {
-          var compositionSpanSelected = $(compositionPs[i]).children("span.selected");
-          var compositionSpans = $(compositionPs[i]).children("span").not("span.selected").toArray();
-          for (var j = 0; j < compositionSpans.length; ++j) {
-            compositionOption = {
-              "p": compositionPs[i],
-              "span_selected": compositionSpanSelected,
-              "span_option": $(compositionSpans[j])
-            };
-            compositionOptions.push(compositionOption);
-          }
-        }
+  <script src="bootstrap.bundle.min.js"></script>
+</body>
 
-        randomCompositionOptionIdx = Math.floor(Math.random() * compositionOptions.length);
-        randomCompositionOption = compositionOptions[randomCompositionOptionIdx];
-
-        randomCompositionOption.span_selected.toggleClass("selected");
-        randomCompositionOption.span_option.toggleClass("selected");
-
-        updateComposition(name);
-        setTimeout(randomComposition, 4000, name);
-      }
-
-      $("#compositional_animals p.selectable span").click(function() {
-        $(this).siblings().removeClass("selected");
-        $(this).addClass("selected");
-        updateComposition("#compositional_animals");
-        compositionalAnimalsManualClicked = true;
-      });
-      $("#compositional_madeof_img").click(function() {
-        updateComposition("#compositional_madeof");
-        compositionalAnimalsManualClicked = true;
-      });
-
-      $("#compositional_madeof p.selectable span").click(function() {
-        $(this).siblings().removeClass("selected");
-        $(this).addClass("selected");
-        updateComposition("#compositional_madeof");
-        compositionalMadeOfManualClicked = true;
-      });
-
-      <!-- setTimeout(randomComposition, 2000, "#compositional_animals"); -->
-      <!-- setTimeout(randomComposition, 4000, "#compositional_madeof"); -->
-    </script>
-
-    <script src="bootstrap.bundle.min.js"></script>
-  </body>
 </html>
