@@ -145,13 +145,13 @@
     <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style described by a <i>single</i> reference image.</p>
   </div>
 
-  <div class="image_0" id="gallery1"
+  <div class="image_0" id="gallery3"
     style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
     <center>
       <div class="flipcard" id="fig0">
         <div class="front">
           <figure>
-            <img src="./images/styledrop_single/08_01.jpg" style="width: 95%; max-width: 1536px;">
+            <img src="./images/styledrop_char/08_char_01.jpg" style="width: 95%; max-width: 1536px;">
             <br></br>
             <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
           </figure>
@@ -355,17 +355,45 @@
       {"src": "./images/styledrop_single/23_02.jpg", "caption": "\"Melting golden 3d rendering style\""},
       {"src": "./images/styledrop_single/24_02.jpg", "caption": "\"Wooden sculpture\""},
     ];
+    gallery_images_3 = [
+      {"src": "./images/styledrop_char/01_char_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_char/02_char_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_char/03_char_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_char/04_char_01.jpg", "caption": "\"Watercolor painting style\""},
+      {"src": "./images/styledrop_char/05_char_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_char/06_char_01.jpg", "caption": "\"Line drawing style\""},
+      {"src": "./images/styledrop_char/07_char_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_char/08_char_01.jpg", "caption": "\"Oil painting style\""},
+      {"src": "./images/styledrop_char/15_char_01.jpg", "caption": "\"Well lit haunted style\""},
+      {"src": "./images/styledrop_char/16_char_01.jpg", "caption": "\"Beautifully lit mythical photo style\""},
+      {"src": "./images/styledrop_char/09_char_01.jpg", "caption": "\"Cartoon line drawing style\""},
+      {"src": "./images/styledrop_char/10_char_01.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_char/11_char_01.jpg", "caption": "\"Flat cartoon illustration style\""},
+      {"src": "./images/styledrop_char/12_char_01.jpg", "caption": "\"Sticker style\""},
+      {"src": "./images/styledrop_char/13_char_01.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
+      {"src": "./images/styledrop_char/14_char_01.jpg", "caption": "\"Glowing style\""},
+      {"src": "./images/styledrop_char/17_char_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_char/18_char_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_char/19_char_01.jpg", "caption": "\"Glowing 3d rendering style\""},
+      {"src": "./images/styledrop_char/20_char_01.jpg", "caption": "\"3d rendering style\""},
+      {"src": "./images/styledrop_char/21_char_01.jpg", "caption": "\"Kid crayon drawing style\""},
+      {"src": "./images/styledrop_char/22_char_01.jpg", "caption": "\"Glowing metal sculpture\""},
+      {"src": "./images/styledrop_char/23_char_01.jpg", "caption": "\"Melting golden 3d rendering style\""},
+      {"src": "./images/styledrop_char/24_char_01.jpg", "caption": "\"Wooden sculpture\""},
+    ];
 
     lastCardFlippedIdx = {
       gallery0: -1,
       gallery1: -1,
       gallery2: -1,
+      gallery3: -1,
     };
 
     lastCardFlippedLastSwapTime = {
       gallery0: -1,
       gallery1: -1,
       gallery2: -1,
+      gallery3: -1,
     };
 
     $(".flipcard").flip({
@@ -399,6 +427,8 @@
         img_src = gallery_images_1;
       } else if (name == "#gallery2") {
         img_src = gallery_images_2;
+      } else if (name == "#gallery3") {
+        img_src = gallery_images_3;
       }
       while (true) {
         randomImageIdx = Math.floor(Math.random() * img_src.length);
@@ -459,10 +489,10 @@
               }
             );
       }
-      for (id = 0; id < 1; id ++) {
-            setupGallery1(id);
-      }
-      function setupGallery2(id) {
+    for (id = 0; id < 1; id ++) {
+          setupGallery1(id);
+    }
+    function setupGallery2(id) {
             randomSwapImageWithId("#gallery2", id);
             $("#gallery2 #fig" + id).click(
               function() {
@@ -470,9 +500,20 @@
               }
             );
       }
-      for (id = 0; id < 1; id ++) {
-            setupGallery2(id);
+    for (id = 0; id < 1; id ++) {
+          setupGallery2(id);
+    }
+    function setupGallery3(id) {
+            randomSwapImageWithId("#gallery3", id);
+            $("#gallery3 #fig" + id).click(
+              function() {
+                randomSwapImageWithId("#gallery3", id);
+              }
+            );
       }
+    for (id = 0; id < 1; id ++) {
+          setupGallery3(id);
+    }
 
     $("#gallery0 #fig0").click(
       function () {
@@ -482,6 +523,7 @@
 
     setTimeout(randomSwapImage, 2000, "#gallery1");
     setTimeout(randomSwapImage, 2000, "#gallery2");
+    setTimeout(randomSwapImage, 2000, "#gallery3");
   </script>
 
   <script src="bootstrap.bundle.min.js"></script>
