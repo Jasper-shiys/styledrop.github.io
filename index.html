@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="bootstrap.min.css" rel="stylesheet" />
   <meta name="twitter:card" content="summary_large_image" />
   <!-- anon-on -->
   <meta name="twitter:site" content="@GoogleAI" />
@@ -24,6 +23,7 @@
 
   <title>StyleDrop: Text-to-Image Synthesis of Any Style</title>
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V8HJZTYJKX"></script>
 <script>
@@ -64,6 +64,7 @@
     </div>
     <!-- anon-off -->
   </div>
+
   <div class="header_dark_gray">
     <h1><i>StyleDrop</i> is a text-to-image generation model of any style.</h1>
   </div>
@@ -72,17 +73,17 @@
     <div class="inside">
       <p class="text">
         We present <i>StyleDrop</i> that enables the synthesis of images that faithfully follow a specific style,
-        powered by <a href="https://muse-model.github.io/">Muse</a>, a text-to-image generative vision transformer.
+        powered by <a href="https://muse-model.github.io/" style="color:#FF0000;">Muse</a>, a text-to-image generative vision transformer.
         <i>StyleDrop</i> is extremely versatile and captures nuances and details of a user-provided style, such as color
         schemes, shading, design patterns, and local and global effects. <i>StyleDrop</i> works by efficiently learning
         a new style by fine-tuning very few trainable parameters (less than 1% of total model parameters), and improving
         the quality via iterative training with either human or automated feedback. Better yet, <i>StyleDrop</i> is able
         to deliver impressive results even when the user supplies only a <i>single</i> image specifying the desired
         style. An extensive study shows that, for the task of style tuning text-to-image models, Styledrop on <a
-          href="https://muse-model.github.io/">Muse</a> convincingly outperforms other methods, including <a
-          href="https://dreambooth.github.io/">DreamBooth</a> and <a href="https://textual-inversion.github.io/">Textual
-          Inversion</a> on <a href="https://imagen.research.google/">Imagen</a> or <a
-          href="https://stability.ai/stable-diffusion">Stable Diffusion</a>.
+          href="https://muse-model.github.io/" style="color:#FF0000;">Muse</a> convincingly outperforms other methods, including <a
+          href="https://dreambooth.github.io/" style="color:#FF0000;">DreamBooth</a> and <a href="https://textual-inversion.github.io/" style="color:#FF0000;">Textual
+          Inversion</a> on <a href="https://imagen.research.google/" style="color:#FF0000;">Imagen</a> or <a
+          href="https://stability.ai/stable-diffusion" style="color:#FF0000;">Stable Diffusion</a>.
       </p>
       <!-- anon-on -->
       <a class="read-paper" href="https://styledrop.github.io/"><button>Research Paper</button></a>
@@ -93,108 +94,447 @@
   <!-- Block 1: System description -->
   <div class="header_dark_gray">
     <h1>Stylized Text-to-image Generation from a Single Image</h1>
-    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates high-quality images from text prompts of
+    <p><b><i>StyleDrop</i></b> generates high-quality images from text prompts of
       any style described by a <i>single</i> reference image.</p>
   </div>
 
-  <div class="image_0" id="gallery1"
-    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
-    <center>
-      <div class="flipcard" id="fig0">
-        <div class="front">
-          <figure>
-            <img src="./images/styledrop_single/04_01.jpg" style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </center>
+  <div id="slideshow1" class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/01_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/02_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/03_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/04_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/05_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/06_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/07_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/08_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/09_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Cartoon line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/10_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/11_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/12_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Sticker style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/13_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Abstract rainbow colored flowing smoke wave design"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/14_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/15_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Well lit haunted style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/16_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Beautifully lit mythical photo style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/17_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/18_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/19_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/20_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/21_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Kid crayon drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/22_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing metal sculpture"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/23_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Melting golden 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/24_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Wooden sculpture"</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, slideshow1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow1)">&#10095;</a>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(4, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(5, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(6, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(7, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(8, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(9, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(10, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(11, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(12, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(13, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(14, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(15, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(16, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(17, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(18, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(19, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(20, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(21, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(22, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(23, slideshow1)"></span>
+      <span class="dot" onclick="currentSlide(24, slideshow1)"></span>
+    </div>
   </div>
-  <div class="image_0" id="gallery2"
-    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
-    <center>
-      <div class="flipcard" id="fig0">
-        <div class="front">
-          <figure>
-            <img src="./images/styledrop_single/17_01.jpg" style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </center>
+  <br>
+  <br>
+
+  <div id="slideshow2" class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/01_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/02_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/03_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/04_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/05_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/06_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/07_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/08_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/09_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Cartoon line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/10_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/11_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/12_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Sticker style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/13_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Abstract rainbow colored flowing smoke wave design"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/14_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/15_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Well lit haunted style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/16_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Beautifully lit mythical photo style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/17_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/18_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/19_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/20_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/21_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Kid crayon drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/22_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing metal sculpture"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/23_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Melting golden 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_single/24_02.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Wooden sculpture"</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, slideshow2)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow2)">&#10095;</a>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(4, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(5, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(6, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(7, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(8, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(9, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(10, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(11, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(12, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(13, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(14, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(15, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(16, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(17, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(18, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(19, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(20, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(21, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(22, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(23, slideshow2)"></span>
+      <span class="dot" onclick="currentSlide(24, slideshow2)"></span>
+    </div>
   </div>
+  <br>
+  <br>
 
   <!-- Block 2: Character rendering -->
   <div class="header_dark_gray">
     <h1>Stylized Character Rendering</h1>
-    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style described by a <i>single</i> reference image.</p>
+    <p><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style
+      described by a <i>single</i> reference image.</p>
   </div>
 
-  <div class="image_0" id="gallery3"
-    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
-    <center>
-      <div class="flipcard" id="fig0">
-        <div class="front">
-          <figure>
-            <img src="./images/styledrop_char/08_char_01.jpg" style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </center>
+  <div id="slideshow3" class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/01_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/02_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/03_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/04_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Watercolor painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/05_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/06_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/07_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/08_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Oil painting style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/09_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Cartoon line drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/10_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/11_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Flat cartoon illustration style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/12_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Sticker style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/13_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Abstract rainbow colored flowing smoke wave design"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/14_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/15_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Well lit haunted style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/16_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Beautifully lit mythical photo style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/17_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/18_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/19_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/20_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/21_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Kid crayon drawing style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/22_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Glowing metal sculpture"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/23_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Melting golden 3d rendering style"</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_char/24_char_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext">"Wooden sculpture"</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, slideshow3)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow3)">&#10095;</a>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(4, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(5, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(6, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(7, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(8, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(9, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(10, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(11, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(12, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(13, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(14, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(15, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(16, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(17, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(18, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(19, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(20, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(21, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(22, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(23, slideshow3)"></span>
+      <span class="dot" onclick="currentSlide(24, slideshow3)"></span>
+    </div>
   </div>
+  <br>
+  <br>
 
   <!-- Block 3: Design and Illustration -->
   <div class="header_dark_gray">
     <h1>Build Your Style Assistant</h1>
-    <p style="font-size:20px" align=center><b><i>StyleDrop</i></b> is easy to train with your own brand assets and helps you to quickly prototype different ideas with your own style.</p>
+    <p><b><i>StyleDrop</i></b> is easy to train with your own brand assets and helps
+      you to quickly prototype different ideas with your own style.</p>
   </div>
 
-  <div class="image_0" id="gallery1"
-    style="padding-top: 10px; padding-bottom: 10px; background-color: rgb(255,255,255);">
-    <center>
-      <div class="flipcard" id="fig0">
-        <div class="front">
-          <figure>
-            <img src="./images/styledrop_single/08_01.jpg" style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">Watercolor painting style.</figcaption>
-          </figure>
-        </div>
-        <div class="back">
-          <figure>
-            <img style="width: 95%; max-width: 1536px;">
-            <br></br>
-            <figcaption style="font-size:18px">.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </center>
+  <div id="slideshow4" class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="./images/styledrop_design/01_design_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext"></div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_design/02_design_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext"></div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_design/03_design_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext"></div>
+    </div>
+    <div class="mySlides fade">
+      <img src="./images/styledrop_design/04_design_01.jpg" style="width:95%; max-width: 1536px;">
+      <div class="imagetext"></div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1, slideshow4)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, slideshow4)">&#10095;</a>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1, slideshow4)"></span>
+      <span class="dot" onclick="currentSlide(2, slideshow4)"></span>
+      <span class="dot" onclick="currentSlide(3, slideshow4)"></span>
+      <span class="dot" onclick="currentSlide(4, slideshow4)"></span>
+    </div>
   </div>
+  <br>
+  <br>
 
   <!-- anon-on -->
   <div class="content">
@@ -304,97 +644,12 @@
       },
     ];
 
-    gallery_images_1 = [
-      {"src": "./images/styledrop_single/01_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/02_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/03_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/04_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/05_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/06_01.jpg", "caption": "\"Line drawing style\""},
-      {"src": "./images/styledrop_single/07_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/08_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/15_01.jpg", "caption": "\"Well lit haunted style\""},
-      {"src": "./images/styledrop_single/16_01.jpg", "caption": "\"Beautifully lit mythical photo style\""},
-      {"src": "./images/styledrop_single/01_02.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/02_02.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/03_02.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/04_02.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_single/05_02.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/06_02.jpg", "caption": "\"Line drawing style\""},
-      {"src": "./images/styledrop_single/07_02.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/08_02.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_single/15_02.jpg", "caption": "\"Well lit haunted style\""},
-      {"src": "./images/styledrop_single/16_02.jpg", "caption": "\"Beautifully lit mythical photo style\""},
-    ];
-    gallery_images_2 = [
-      {"src": "./images/styledrop_single/09_01.jpg", "caption": "\"Cartoon line drawing style\""},
-      {"src": "./images/styledrop_single/10_01.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_single/11_01.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_single/12_01.jpg", "caption": "\"Sticker style\""},
-      {"src": "./images/styledrop_single/13_01.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
-      {"src": "./images/styledrop_single/14_01.jpg", "caption": "\"Glowing style\""},
-      {"src": "./images/styledrop_single/17_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/18_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/19_01.jpg", "caption": "\"Glowing 3d rendering style\""},
-      {"src": "./images/styledrop_single/20_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/21_01.jpg", "caption": "\"Kid crayon drawing style\""},
-      {"src": "./images/styledrop_single/22_01.jpg", "caption": "\"Glowing metal sculpture\""},
-      {"src": "./images/styledrop_single/23_01.jpg", "caption": "\"Melting golden 3d rendering style\""},
-      {"src": "./images/styledrop_single/24_01.jpg", "caption": "\"Wooden sculpture\""},
-      {"src": "./images/styledrop_single/09_02.jpg", "caption": "\"Cartoon line drawing style\""},
-      {"src": "./images/styledrop_single/10_02.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_single/11_02.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_single/12_02.jpg", "caption": "\"Sticker style\""},
-      {"src": "./images/styledrop_single/13_02.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
-      {"src": "./images/styledrop_single/14_02.jpg", "caption": "\"Glowing style\""},
-      {"src": "./images/styledrop_single/17_02.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/18_02.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/19_02.jpg", "caption": "\"Glowing 3d rendering style\""},
-      {"src": "./images/styledrop_single/20_02.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_single/21_02.jpg", "caption": "\"Kid crayon drawing style\""},
-      {"src": "./images/styledrop_single/22_02.jpg", "caption": "\"Glowing metal sculpture\""},
-      {"src": "./images/styledrop_single/23_02.jpg", "caption": "\"Melting golden 3d rendering style\""},
-      {"src": "./images/styledrop_single/24_02.jpg", "caption": "\"Wooden sculpture\""},
-    ];
-    gallery_images_3 = [
-      {"src": "./images/styledrop_char/01_char_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_char/02_char_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_char/03_char_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_char/04_char_01.jpg", "caption": "\"Watercolor painting style\""},
-      {"src": "./images/styledrop_char/05_char_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_char/06_char_01.jpg", "caption": "\"Line drawing style\""},
-      {"src": "./images/styledrop_char/07_char_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_char/08_char_01.jpg", "caption": "\"Oil painting style\""},
-      {"src": "./images/styledrop_char/15_char_01.jpg", "caption": "\"Well lit haunted style\""},
-      {"src": "./images/styledrop_char/16_char_01.jpg", "caption": "\"Beautifully lit mythical photo style\""},
-      {"src": "./images/styledrop_char/09_char_01.jpg", "caption": "\"Cartoon line drawing style\""},
-      {"src": "./images/styledrop_char/10_char_01.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_char/11_char_01.jpg", "caption": "\"Flat cartoon illustration style\""},
-      {"src": "./images/styledrop_char/12_char_01.jpg", "caption": "\"Sticker style\""},
-      {"src": "./images/styledrop_char/13_char_01.jpg", "caption": "\"Abstract rainbow colored flowing smoke wave design\""},
-      {"src": "./images/styledrop_char/14_char_01.jpg", "caption": "\"Glowing style\""},
-      {"src": "./images/styledrop_char/17_char_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_char/18_char_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_char/19_char_01.jpg", "caption": "\"Glowing 3d rendering style\""},
-      {"src": "./images/styledrop_char/20_char_01.jpg", "caption": "\"3d rendering style\""},
-      {"src": "./images/styledrop_char/21_char_01.jpg", "caption": "\"Kid crayon drawing style\""},
-      {"src": "./images/styledrop_char/22_char_01.jpg", "caption": "\"Glowing metal sculpture\""},
-      {"src": "./images/styledrop_char/23_char_01.jpg", "caption": "\"Melting golden 3d rendering style\""},
-      {"src": "./images/styledrop_char/24_char_01.jpg", "caption": "\"Wooden sculpture\""},
-    ];
-
     lastCardFlippedIdx = {
       gallery0: -1,
-      gallery1: -1,
-      gallery2: -1,
-      gallery3: -1,
     };
 
     lastCardFlippedLastSwapTime = {
       gallery0: -1,
-      gallery1: -1,
-      gallery2: -1,
-      gallery3: -1,
     };
 
     $(".flipcard").flip({
@@ -424,12 +679,6 @@
       // different galleries have different sources of imagery.
       if (name == "#gallery0") {
         img_src = logo_images;
-      } else if (name == "#gallery1") {
-        img_src = gallery_images_1;
-      } else if (name == "#gallery2") {
-        img_src = gallery_images_2;
-      } else if (name == "#gallery3") {
-        img_src = gallery_images_3;
       }
       while (true) {
         randomImageIdx = Math.floor(Math.random() * img_src.length);
@@ -482,52 +731,55 @@
     }
     setTimeout(randomSwapImage, 6000, "#gallery0");
 
-    function setupGallery1(id) {
-            randomSwapImageWithId("#gallery1", id);
-            $("#gallery1 #fig" + id).click(
-              function() {
-                randomSwapImageWithId("#gallery1", id);
-              }
-            );
-      }
-    for (id = 0; id < 1; id ++) {
-          setupGallery1(id);
-    }
-    function setupGallery2(id) {
-            randomSwapImageWithId("#gallery2", id);
-            $("#gallery2 #fig" + id).click(
-              function() {
-                randomSwapImageWithId("#gallery2", id);
-              }
-            );
-      }
-    for (id = 0; id < 1; id ++) {
-          setupGallery2(id);
-    }
-    function setupGallery3(id) {
-            randomSwapImageWithId("#gallery3", id);
-            $("#gallery3 #fig" + id).click(
-              function() {
-                randomSwapImageWithId("#gallery3", id);
-              }
-            );
-      }
-    for (id = 0; id < 1; id ++) {
-          setupGallery3(id);
-    }
-
     $("#gallery0 #fig0").click(
       function () {
         randomSwapImageWithId("#gallery0", 0);
       }
     );
-
-    setTimeout(randomSwapImage, 2000, "#gallery1");
-    setTimeout(randomSwapImage, 2000, "#gallery2");
-    setTimeout(randomSwapImage, 2000, "#gallery3");
   </script>
 
-  <script src="bootstrap.bundle.min.js"></script>
+  <script>
+    var slideshow1 = document.getElementById("slideshow1");
+    slideshow1.currentSlideIndex = 23;
+    showSlides(slideshow1.currentSlideIndex, slideshow1);
+
+    var slideshow2 = document.getElementById("slideshow2");
+    slideshow2.currentSlideIndex = 17;
+    showSlides(slideshow2.currentSlideIndex, slideshow2);
+
+    var slideshow3 = document.getElementById("slideshow3");
+    slideshow3.currentSlideIndex = 13;
+    showSlides(slideshow3.currentSlideIndex, slideshow3);
+
+    var slideshow4 = document.getElementById("slideshow4");
+    slideshow4.currentSlideIndex = 3;
+    showSlides(slideshow4.currentSlideIndex, slideshow4);
+
+
+    function plusSlides(n, slideshow) {
+      showSlides(slideshow.currentSlideIndex += n, slideshow);
+    }
+
+    function currentSlide(n, slideshow) {
+      showSlides(slideshow.currentSlideIndex = n, slideshow);
+    }
+
+    function showSlides(n, slideshow) {
+      var i;
+      var slides = slideshow.getElementsByClassName("mySlides");
+      var dots = slideshow.getElementsByClassName("dot");
+      if (n > slides.length) { slideshow.currentSlideIndex = 1 }
+      if (n < 1) { slideshow.currentSlideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideshow.currentSlideIndex - 1].style.display = "block";
+      dots[slideshow.currentSlideIndex - 1].className += " active";
+    }
+  </script>
 </body>
 
 </html>
