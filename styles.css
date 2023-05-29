@@ -150,6 +150,7 @@ div.compositional {
   background-color: rgb(245, 245, 245);
   padding: 0;
   margin: 0;
+  max-width: 1280px
 }
 
 div.compositional div.image img {
@@ -192,6 +193,18 @@ div.compositional div.text span.selected:hover {
   font-weight: bold;
 }
 
+div.compositional div.text span.selected img {
+  color: green;
+  font-weight: bold;
+  border: 2px solid green;
+}
+
+div.compositional div.text span img:hover {
+  color: green;
+  font-weight: bold;
+  border: 2px solid green;
+}
+
 div.authors {
   /* background-color: rgb(26, 26, 26); */
   background-color: rgb(245, 245, 245);
@@ -200,7 +213,7 @@ div.authors {
 
 div.authors p {
   text-align: center;
-  max-width 1000px;
+  max-width: 1280px;
   margin: 0;
   padding: 0;
 }
@@ -819,7 +832,7 @@ a.read-paper button:hover {
 
   div.abstract div.inside {
     padding: 0;
-    max-width: 1000px;
+    max-width: 1280px;
     margin: 0 auto;
     text-align: justify;
   }
@@ -836,7 +849,7 @@ a.read-paper button:hover {
 
   div.limitations div.inside {
     padding: 0;
-    max-width: 1000px;
+    max-width: 1280px;
     margin: 0 auto;
     text-align: justify;
   }
@@ -850,7 +863,7 @@ a.read-paper button:hover {
     display: block;
     margin: auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1280px;
     padding: 50px;
   }
 
@@ -863,7 +876,7 @@ a.read-paper button:hover {
 
   div.white figure figcaption p {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1280px;
     font-size: 1.2em;
   }
 
@@ -890,6 +903,19 @@ a.read-paper button:hover {
     color: rgb(245, 245, 245);
   }
 
+  div.header_dark_gray div.inside {
+    padding: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: rgb(100, 100, 100);
+    color: rgb(245, 245, 245);
+  }
+
+  div.abstract div.inside p.text {
+    padding: 0 0 50px 0;
+    margin: 0;
+  }
   div.header_dark_gray h1 {
     font-size: 2.5em;
     text-align: center;
@@ -969,7 +995,6 @@ a.read-paper button:hover {
 
   div.compositional {
     margin: auto;
-    max-width: 1200px;
     margin: 30;
   }
 
@@ -1123,7 +1148,7 @@ img {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1536px;
+  max-width: 1280px;
   position: relative;
   margin: auto;
   top: 16px;

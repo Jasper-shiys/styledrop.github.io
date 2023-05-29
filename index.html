@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link href="bootstrap.min.css" rel="stylesheet" />
+  
   <meta name="twitter:card" content="summary_large_image" />
   <!-- anon-on -->
   <meta name="twitter:site" content="@GoogleAI" />
@@ -42,25 +43,27 @@
         <div class="front">
           <figure>
             <img src="./images/logo_jpgs/row03_col02_logo.jpg" style="width: 95%; max-width: 512px;">
-            <figcaption style="font-size:18px">A logo with letters "StyleDrop" in 3d rendering style.</figcaption>
+            <figcaption style="font-size:18px;">A logo with letters "StyleDrop" in 3d rendering style.</figcaption>
           </figure>
         </div>
         <div class="back">
           <figure>
             <img src="./images/logo_jpgs/row03_col02_logo.jpg" style="width: 95%; max-width: 512px;">
-            <figcaption style="font-size:18px">A transparent waterdrop in 3d rendering style.</figcaption>
+            <figcaption style="font-size:18px;">A logo with letters "StyleDrop" in 3d rendering style.</figcaption>
           </figure>
         </div>
       </div>
-      <p style="text-align: center; font-size:16px">(A single style reference image is shown in white inset box)</p>
     </center>
-    <h2 style="text-align: center;"><i>StyleDrop:</i> Text-To-Image Synthesis of Any Style</h2>
+    <p style="text-align: center; font-size:16px">(A single style reference image is shown in white inset box)</p>
+    <h2 style="text-align: center;"><i>StyleDrop:</i> Text-To-Image Generation in Any Style</h2>
     <!-- anon-on -->
     <div class="authors">
-      <!--<p>Kihyuk Sohn, Jarred Barber, Lu Jiang,<br> Michael Rubinstein, Yuanzhen Li, Dilip Krishnan </p>-->
-      <center><img
-          src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg"
-          alt="Google Research" height=25></center>
+      <p>Kihyuk Sohn, Nataniel Ruiz, Kimin Lee, Daniel Castro Chin, Irina Blok,</p><p>Huiwen Chang, Jarred Barber, Lu Jiang, Glenn Entis, Yuanzhen Li,</p><p>Yuan Hao, Irfan Essa, Michael Rubinstein, Dilip Krishnan</p>
+      <br>
+      <center>
+        <img src="https://research.google/static/images/google_research_lockup-121987c06c0aa0ab26ca8716a0f2e7945d1cbf82077bbab9f914dac0a0bf099f.svg"
+          alt="Google Research" height=30px>
+        </center>
     </div>
     <!-- anon-off -->
   </div>
@@ -73,7 +76,7 @@
     <div class="inside">
       <p class="text">
         We present <i>StyleDrop</i> that enables the synthesis of images that faithfully follow a specific style,
-        powered by <a href="https://muse-model.github.io/" style="color:#FF0000;">Muse</a>, a text-to-image generative
+        powered by <a href="https://muse-model.github.io/" style="color:#00ccff;">Muse</a>, a text-to-image generative
         vision transformer.
         <i>StyleDrop</i> is extremely versatile and captures nuances and details of a user-provided style, such as color
         schemes, shading, design patterns, and local and global effects. <i>StyleDrop</i> works by efficiently learning
@@ -81,11 +84,11 @@
         the quality via iterative training with either human or automated feedback. Better yet, <i>StyleDrop</i> is able
         to deliver impressive results even when the user supplies only a <i>single</i> image specifying the desired
         style. An extensive study shows that, for the task of style tuning text-to-image models, Styledrop on <a
-          href="https://muse-model.github.io/" style="color:#FF0000;">Muse</a> convincingly outperforms other methods,
-        including <a href="https://dreambooth.github.io/" style="color:#FF0000;">DreamBooth</a> and <a
-          href="https://textual-inversion.github.io/" style="color:#FF0000;">Textual
-          Inversion</a> on <a href="https://imagen.research.google/" style="color:#FF0000;">Imagen</a> or <a
-          href="https://stability.ai/stable-diffusion" style="color:#FF0000;">Stable Diffusion</a>.
+          href="https://muse-model.github.io/" style="color:#00ccff;">Muse</a> convincingly outperforms other methods,
+        including <a href="https://dreambooth.github.io/" style="color:#00ccff;">DreamBooth</a> and <a
+          href="https://textual-inversion.github.io/" style="color:#00ccff;">Textual
+          Inversion</a> on <a href="https://imagen.research.google/" style="color:#00ccff;">Imagen</a> or <a
+          href="https://stability.ai/stable-diffusion" style="color:#00ccff;">Stable Diffusion</a>.
       </p>
       <!-- anon-on -->
       <a class="read-paper" href="https://styledrop.github.io/"><button>Research Paper</button></a>
@@ -96,105 +99,107 @@
   <!-- Block 1: System description -->
   <div class="header_dark_gray">
     <h1>Stylized Text-to-image Generation from a Single Image</h1>
-    <p><b><i>StyleDrop</i></b> generates high-quality images from text prompts of
+    <div class="inside">
+      <p><b><i>StyleDrop</i></b> generates high-quality images from text prompts of
       any style described by a <i>single</i> reference image. A style descriptor in natural language (e.g., "<i>in melting golden 3d rendering style</i>") is appended to the content descriptors both at training and synthesis.</p>
+    </div>
   </div>
 
   <div id="slideshow1" class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/01_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/01_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/02_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/02_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/03_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/03_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/04_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/04_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/05_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/05_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/06_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/06_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/07_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/07_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/08_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/08_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/09_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/09_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in cartoon line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/10_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/10_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/11_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/11_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/12_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/12_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in sticker style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/13_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/13_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in abstract rainbow colored flowing smoke wave design"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/14_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/14_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/15_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/15_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in well lit haunted style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/16_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/16_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in beautifully lit mythical photo style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/17_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/17_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/18_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/18_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/19_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/19_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/20_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/20_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/21_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/21_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in kid crayon drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/22_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/22_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing metal sculpture"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/23_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/23_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in melting golden 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/24_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/24_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in wooden sculpture"</div>
     </div>
 
@@ -232,100 +237,100 @@
   <br>
 
   <div id="slideshow2" class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/01_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/01_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/02_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/02_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/03_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/03_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/04_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/04_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/05_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/05_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/06_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/06_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/07_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/07_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/08_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/08_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/09_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/09_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in cartoon line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/10_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/10_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/11_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/11_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/12_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/12_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in sticker style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/13_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/13_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in abstract rainbow colored flowing smoke wave design"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/14_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/14_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/15_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/15_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in well lit haunted style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/16_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/16_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in beautifully lit mythical photo style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/17_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/17_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/18_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/18_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/19_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/19_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/20_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/20_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/21_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/21_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in kid crayon drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/22_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/22_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing metal sculpture"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/23_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/23_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in melting golden 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_single/24_02.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_single/24_02.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in wooden sculpture"</div>
     </div>
 
@@ -365,105 +370,107 @@
   <!-- Block 2: Character rendering -->
   <div class="header_dark_gray">
     <h1>Stylized Character Rendering</h1>
-    <p><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style
+    <div class="inside">
+      <p><b><i>StyleDrop</i></b> generates images of alphabets with a consistent style
       described by a <i>single</i> reference image. A style descriptor in natural language (e.g., "<i>in abstract rainbow colored flowing smoke wave design</i>") is appended to the content descriptors both at training and synthesis.</p>
+    </div>
   </div>
 
   <div id="slideshow3" class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/01_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/01_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/02_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/02_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/03_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/03_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/04_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/04_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in watercolor painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/05_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/05_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/06_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/06_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/07_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/07_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/08_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/08_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in oil painting style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/09_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/09_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in cartoon line drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/10_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/10_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/11_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/11_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in flat cartoon illustration style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/12_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/12_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in sticker style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/13_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/13_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in abstract rainbow colored flowing smoke wave design"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/14_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/14_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/15_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/15_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in well lit haunted style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/16_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/16_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in beautifully lit mythical photo style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/17_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/17_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/18_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/18_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/19_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/19_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/20_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/20_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/21_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/21_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in kid crayon drawing style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/22_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/22_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in glowing metal sculpture"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/23_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/23_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in melting golden 3d rendering style"</div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_char/24_char_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_char/24_char_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext">"in wooden sculpture"</div>
     </div>
 
@@ -503,25 +510,27 @@
   <!-- Block 3: Design and Illustration -->
   <div class="header_dark_gray">
     <h1>Collaborate with Your Style Assistant</h1>
-    <p><b><i>StyleDrop</i></b> is easy to train with your own brand assets and helps
+    <div class="inside">
+      <p><b><i>StyleDrop</i></b> is easy to train with your own brand assets and helps
       you to quickly prototype ideas in your own style. A style descriptor in natural language is appended to the content descriptors both at training and synthesis.</p>
+    </div>
   </div>
 
   <div id="slideshow4" class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="./images/styledrop_design/01_design_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_design/01_design_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext"></div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_design/02_design_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_design/02_design_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext"></div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_design/03_design_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_design/03_design_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext"></div>
     </div>
-    <div class="mySlides fade">
-      <img src="./images/styledrop_design/04_design_01.jpg" style="width:95%; max-width: 1536px;">
+    <div class="mySlides">
+      <img src="./images/styledrop_design/04_design_01.jpg" style="width:95%; max-width: 1280px;">
       <div class="imagetext"></div>
     </div>
 
@@ -539,19 +548,58 @@
   <br>
 
   <div class="header_dark_gray">
+    <h1>My Subject in My Style</h1>
+    <div class="inside">
+      <p>We combine <b><i>StyleDrop</i></b> and <a href="https://dreambooth.github.io/" style="color:#00ccff;">DreamBooth</a> to generate an image of "<b>my subject</b>" in "<b>my style</b>".</p>
+    </div>
+  </div>
+
+  <div class="compositional">
+    <br>
+    <div class="image">
+      <img src="./images/logo_jpgs/row01_col01_logo.jpg" id="compositional_animals_img" style="width:95%; max-width: 640px;">
+    </div>
+    <br>
+    <div class="text" id="compositional_animals">
+      <p class="selectable left">
+        Subject<br>
+        <span class="selected"><img alt="content1" src="https://github.com/google/dreambooth/blob/main/dataset/teapot/04.jpg?raw=true" width="100" height="100"></img></span>
+        <span><img alt="content2" src="https://github.com/google/dreambooth/blob/main/dataset/vase/04.jpg?raw=true" width="100" height="100"></img></span>
+        <span><img alt="content3" src="https://github.com/google/dreambooth/blob/main/dataset/dog6/04.jpg?raw=true" width="100" height="100"></img></span>
+        <span><img alt="content4" src="https://github.com/google/dreambooth/blob/main/dataset/cat/04.jpg?raw=true" width="100" height="100"></img></span>
+      </p>
+      <p class="selectable left">
+        Style<br>
+        <span class="selected"><img alt="style1" src="https://images.unsplash.com/photo-1612760721786-a42eb89aba02?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" width="100" height="100"></img></span>
+        <span><img alt="style2" src="https://images.unsplash.com/photo-1578927107994-75410e4dcd51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80" width="100" height="100"></img></span>
+        <span><img alt="style3" src="https://upload.wikimedia.org/wikipedia/commons/6/66/VanGogh-starry_night_ballance1.jpg" width="100" height="100"></img></span>
+        <span><img alt="style4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Vincent_van_Gogh_-_Self-portrait_with_grey_felt_hat_-_Google_Art_Project.jpg/1024px-Vincent_van_Gogh_-_Self-portrait_with_grey_felt_hat_-_Google_Art_Project.jpg" width="100" height="100"></img></span>
+        <span><img alt="style5" src="https://images.unsplash.com/photo-1654648663068-0093ade5069e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" width="100" height="100"></img></span>
+        <span><img alt="style6" src="https://img.freepik.com/free-psd/three-dimensional-real-estate-icon-mock-up_23-2149729145.jpg?w=996&t=st=1685117577~exp=1685118177~hmac=2d789df87b156c2e5578c8ddb69e4a3b3176206f81b774d9faea7492a4eafc0f" width="100" height="100"></img></span>
+        <span><img alt="style7" src="https://images.unsplash.com/photo-1630476504743-a4d342f88760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1895&q=80" width="100" height="100"></img></span>
+        <span><img alt="style8" src="https://images.unsplash.com/photo-1637234852730-677079a9d718?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80" width="100" height="100"></img></span>
+      </p>
+    </div>
+  </div>
+  
+
+  <div class="header_dark_gray">
     <h1>Comparison to Fine-tuning of Diffusion Models</h1>
-    <p><b><i>StyleDrop</i></b> on Muse, a discrete-token based vision transformer, convincingly outperforms in style-tuning over existing methods based on diffusion (Imagen, Stable Diffusion) models.</p>
+    <div class="inside">
+      <p><b><i>StyleDrop</i></b> on Muse, a discrete-token based vision transformer, convincingly outperforms in style-tuning over existing methods based on diffusion (Imagen, Stable Diffusion) models.</p>
+    </div>
   </div>
   <div class="white">
     <figure>
-      <img src="./images/more/comparison_style_supp_4col.jpg" style="width:95%; max-width: 1536px;">
+      <img src="./images/more/comparison_style_supp_4col.jpg" style="width:95%; max-width: 1280px;">
     </figure>
   </div>
 
   <!-- anon-on -->
-  <div class="content">
-    <h1>Special Thanks</h1>
-    <p class="smaller" style="text-align: justify;">.</p>
+  <div class="header_dark_gray">
+    <h1>Acknowledgment</h1>
+    <p>First of all, we thank owners of images for sharing their valuable assets. We provide <a href="https://github.com/styledrop/styledrop.github.io/blob/main/images/assets/data.md" style="color:#00ccff;">links</a> to image assets used in our experiments. 
+      We thank Varun Jampani, Jason Baldridge, Forrester Cole, José Lezama,  for their valuable feedback on the manuscript.</p>
   </div>
   <!-- anon-off -->
 
@@ -792,6 +840,72 @@
       dots[slideshow.currentSlideIndex - 1].className += " active";
     }
   </script>
+
+  <script type="text/javascript">
+    compositionalAnimalsManualClicked = false;
+
+    comp_files = {
+      "content1 style1": ["./images/combo/content1_style1/00001.png", "./images/combo/content1_style1/00002.png"],
+      "content1 style2": ["./images/combo/content1_style2/00001.png", "./images/combo/content1_style2/00002.png"],
+      "content1 style3": ["./images/combo/content1_style3/00001.png", "./images/combo/content1_style3/00002.png"],
+      "content1 style4": ["./images/combo/content1_style4/00001.png", "./images/combo/content1_style4/00002.png"],
+      "content1 style5": ["./images/combo/content1_style5/00001.png", "./images/combo/content1_style5/00002.png"],
+      "content1 style6": ["./images/combo/content1_style6/00001.png", "./images/combo/content1_style6/00002.png"],
+      "content1 style7": ["./images/combo/content1_style7/00001.png", "./images/combo/content1_style7/00002.png"],
+      "content1 style8": ["./images/combo/content1_style8/00001.png", "./images/combo/content1_style8/00002.png"],
+      "content2 style1": ["./images/combo/content2_style1/00001.png", "./images/combo/content2_style1/00002.png"],
+      "content2 style2": ["./images/combo/content2_style2/00001.png", "./images/combo/content2_style2/00002.png"],
+      "content2 style3": ["./images/combo/content2_style3/00001.png", "./images/combo/content2_style3/00002.png"],
+      "content2 style4": ["./images/combo/content2_style4/00001.png", "./images/combo/content2_style4/00002.png"],
+      "content2 style5": ["./images/combo/content2_style5/00001.png", "./images/combo/content2_style5/00002.png"],
+      "content2 style6": ["./images/combo/content2_style6/00001.png", "./images/combo/content2_style6/00002.png"],
+      "content2 style7": ["./images/combo/content2_style7/00001.png", "./images/combo/content2_style7/00002.png"],
+      "content2 style8": ["./images/combo/content2_style8/00001.png", "./images/combo/content2_style8/00002.png"],
+      "content3 style1": ["./images/combo/content3_style1/00001.png", "./images/combo/content3_style1/00002.png"],
+      "content3 style2": ["./images/combo/content3_style2/00001.png", "./images/combo/content3_style2/00002.png"],
+      "content3 style3": ["./images/combo/content3_style3/00001.png", "./images/combo/content3_style3/00002.png"],
+      "content3 style4": ["./images/combo/content3_style4/00001.png", "./images/combo/content3_style4/00002.png"],
+      "content3 style5": ["./images/combo/content3_style5/00001.png", "./images/combo/content3_style5/00002.png"],
+      "content3 style6": ["./images/combo/content3_style6/00001.png", "./images/combo/content3_style6/00002.png"],
+      "content3 style7": ["./images/combo/content3_style7/00001.png", "./images/combo/content3_style7/00002.png"],
+      "content3 style8": ["./images/combo/content3_style8/00001.png", "./images/combo/content3_style8/00002.png"],
+      "content4 style1": ["./images/combo/content4_style1/00001.png", "./images/combo/content4_style1/00002.png"],
+      "content4 style2": ["./images/combo/content4_style2/00001.png", "./images/combo/content4_style2/00002.png"],
+      "content4 style3": ["./images/combo/content4_style3/00001.png", "./images/combo/content4_style3/00002.png"],
+      "content4 style4": ["./images/combo/content4_style4/00001.png", "./images/combo/content4_style4/00002.png"],
+      "content4 style5": ["./images/combo/content4_style5/00001.png", "./images/combo/content4_style5/00002.png"],
+      "content4 style6": ["./images/combo/content4_style6/00001.png", "./images/combo/content4_style6/00002.png"],
+      "content4 style7": ["./images/combo/content4_style7/00001.png", "./images/combo/content4_style7/00002.png"],
+      "content4 style8": ["./images/combo/content4_style8/00001.png", "./images/combo/content4_style8/00002.png"],
+    }
+
+    function updateComposition(name) {
+      var compositionSpans = $(name + " p span.selected img").map(function() {
+        var text = $(this).attr("alt");
+        return text;
+      }).get();
+      var compositionText = "";
+      for (var compositionSpansIdx = 0; compositionSpansIdx < compositionSpans.length; ++compositionSpansIdx) {
+        if (compositionSpansIdx > 0) {
+          compositionText += " ";
+        }
+        compositionText += compositionSpans[compositionSpansIdx];
+      }
+      if (name == "#compositional_animals") {
+        randImgIdx = Math.floor(Math.random() * 2);
+        $(name + "_img").attr("src", comp_files[compositionText][randImgIdx]);
+      }
+    }
+
+    $("#compositional_animals p.selectable span").click(function() {
+      $(this).siblings().removeClass("selected");
+      $(this).addClass("selected");
+      updateComposition("#compositional_animals");
+      compositionalAnimalsManualClicked = true;
+    });
+  </script>
+
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
