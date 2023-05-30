@@ -213,7 +213,7 @@ div.authors {
 
 div.authors p {
   text-align: center;
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0;
   padding: 0;
 }
@@ -449,18 +449,19 @@ a.read-paper button:hover {
 
   div.header_light_gray {
     color: rgb(26, 26, 26);
-    padding: 25px 10px;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(245, 245, 245);
   }
 
   div.header_light_gray h1 {
-    font-size: 1.2em;
+    font-size: 1.8em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_light_gray h2 {
-    font-size: 1em;
+    font-size: 1.4em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray {
@@ -472,16 +473,19 @@ a.read-paper button:hover {
   div.header_dark_gray h1 {
     font-size: 1.2em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray h2 {
     font-size: 1em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray p {
-    font-size: 0.8em;
+    font-size: 1em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark {
@@ -882,19 +886,19 @@ a.read-paper button:hover {
 
   div.header_light_gray {
     color: rgb(26, 26, 26);
-    margin-top: 30px;
-    padding: 20px;
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(245, 245, 245);
   }
 
   div.header_light_gray h1 {
     font-size: 2.5em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_light_gray h2 {
-    font-size: 2.0em;
+    font-size: 2.2em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray {
@@ -919,16 +923,19 @@ a.read-paper button:hover {
   div.header_dark_gray h1 {
     font-size: 2.5em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray h2 {
     font-size: 2.0em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark_gray p {
-    font-size: 1.5em;
+    font-size: 1.6em;
     text-align: center;
+    padding: 25px 25px;
   }
 
   div.header_dark {
